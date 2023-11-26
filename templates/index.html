@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home | SWEETER</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bulma CSS link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+    <!-- Font Awesome CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link href="{{ url_for('static', filename='mystyle.css') }}" rel="stylesheet" />
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="{{ url_for('static', filename='myjs.js') }}"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            get_posts()
+        });
+        
+    </script>
+</head>
+
+<body class="has-navbar-fixed-top">
+    <nav class="navbar is-fixed-top is-white" role="navigation" aria-label="main-navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="{{ url_for('static', filename='logo.png') }}" />
+                <strong class="is-sparta logo-text">
+                    SWEETER
+                </strong>
+            </a>
+        </div>
+    </nav>
+
+    <section class="section">
+        <article class="media">
+            <figure class="media-left" style="align-self: center;">
+                <a class="image is-64x64" href="/user/{{ user_info.username }}">
+                    <img class="is-rounded" src="{{ url_for('static', filename=user_info.profile_pic_real) }}" />
+                </a>
+            </figure>
+
+            <div class="media-content">
+                <div class="field">
+                    <p class="control">
+                        <input class="input is-rounded" id="input-post" placeholder="What are you thinking about?"
+                            onclick="$('#modal-post').addClass('is-active')">
+
+                    <div class="modal" id="modal-post">
+                        <div class="modal-background" onclick="$('#modal-posting')"></div>
+                    </div>
+                    <div class="modal-content">
+
+                    </div>
+                    </p>
+                </div>
+                </a>
+            </div>
+            </nav>
+            </div>
+        </article>
+    </section>
+</body>
+
+</html>
